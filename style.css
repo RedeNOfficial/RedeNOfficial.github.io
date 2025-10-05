@@ -6,17 +6,29 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body z obrazem w tle */
 body {
-  background: #f4f4f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url('tlo.jpg') no-repeat center center fixed; /* ← tu podmień nazwę pliku */
+  background-size: cover;
   color: #333;
+}
+
+/* Wrapper, żeby stopka była na dole */
+.content-wrapper {
+  flex: 1;
 }
 
 /* Header */
 header {
-  background: #6c5ce7;
+  background: rgba(108, 92, 231, 0.9);
   color: white;
   text-align: center;
   padding: 40px 20px;
+  backdrop-filter: blur(4px);
+  border-bottom: 3px solid #5a4bd8;
 }
 
 header h1 {
@@ -28,13 +40,14 @@ header p {
   font-size: 1.2rem;
 }
 
-/* Main */
+/* Główna sekcja */
 main {
   max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+/* Karty modów */
 .mods {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -42,11 +55,12 @@ main {
 }
 
 .mod-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  backdrop-filter: blur(6px);
 }
 
 .mod-card:hover {
@@ -64,13 +78,12 @@ main {
   line-height: 1.4;
 }
 
-/* Footer */
+/* Stopka zawsze na dole */
 footer {
   text-align: center;
   padding: 20px;
   background: #333;
   color: white;
-  margin-top: 40px;
 }
 
 footer a {
